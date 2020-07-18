@@ -3,6 +3,7 @@
 # -----------------------------------------------------------------------------
 
 # Let's just operate in the default VPC for now...
+# Note, I've already set up a VPC with a NAT gateway + public subnets!
 data "aws_vpc" "default" {
   default = true
 }

@@ -7,6 +7,7 @@ resource "aws_cloudwatch_event_rule" "every_two_minutes" {
   name        = "every-two-minutes"
   description = "A rule that fires every two minutes"
 
+  is_enabled          = false
   schedule_expression = "rate(2 minutes)"
 }
 
@@ -27,7 +28,8 @@ resource "aws_cloudwatch_event_target" "ecs_target" {
       subnets          = data.aws_subnet_ids.default.ids
       security_groups  = [aws_security_group.allow_all_outbound.id]
 
-      assign_public_ip = false
+      # These containers need to speak to the internet, so give them IP addresses
+      assign_public_ip = true
     }
   }
 }
