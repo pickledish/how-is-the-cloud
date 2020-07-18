@@ -1,0 +1,9 @@
+[
+  {
+    "name": "ubuntu-check-s3-health",
+    "image": "ubuntu:20.04",
+    "cpu": 512,
+    "memory": 1024,
+    "essential": true
+  }
+]
