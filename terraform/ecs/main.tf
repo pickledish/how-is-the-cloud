@@ -12,10 +12,10 @@ resource "aws_ecs_task_definition" "check_s3" {
   family                = "service"
   container_definitions = file("./check-s3-definition.json")
 
-  task_role_arn = "arn:aws:iam::880716778824:role/ecs-role"
+  task_role_arn = aws_iam_role.ecs_role.arn
 
   network_mode             = "awsvpc"
-  requires_compatibilities = ["FARGATE"]
+  requires_compatibilities = ["FARGATE_SPOT"]
 
   cpu    = 512
   memory = 1024
