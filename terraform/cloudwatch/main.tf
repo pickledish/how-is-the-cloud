@@ -3,18 +3,18 @@ provider "aws" {
   region  = "us-east-2"
 }
 
-resource "aws_cloudwatch_event_rule" "every_two_minutes" {
-  name        = "every-two-minutes"
-  description = "A rule that fires every two minutes"
+resource "aws_cloudwatch_event_rule" "every_five_minutes" {
+  name        = "every-five-minutes"
+  description = "A rule that fires every five minutes"
 
   is_enabled          = false
-  schedule_expression = "rate(2 minutes)"
+  schedule_expression = "rate(5 minutes)"
 }
 
 resource "aws_cloudwatch_event_target" "ecs_target" {
   target_id = "ecs-target"
   arn       = "arn:aws:ecs:us-east-2:880716778824:cluster/check-cluster"
-  rule      = aws_cloudwatch_event_rule.every_two_minutes.name
+  rule      = aws_cloudwatch_event_rule.every_five_minutes.name
   role_arn  = aws_iam_role.cloudwatch_role.arn
 
   ecs_target {

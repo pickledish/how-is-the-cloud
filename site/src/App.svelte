@@ -15,7 +15,7 @@
     Stop being gaslit by ___ status pages and find out if critical cloud services are down using real API calls.
   </h3>
   <div class="w-full flex justify-center">
-    <div class="flex justify-between w-full md:w-10/12">
+    <div class="flex flex-col justify-between items-stretch w-full md:w-10/12">
       <Service name="Docker Hub"/>
       <Service name="Cloudflare"/>
       <Service name="Amazon S3"/>

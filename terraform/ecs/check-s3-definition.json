@@ -1,9 +1,12 @@
 [
   {
     "name": "ubuntu-check-s3-health",
-    "image": "ubuntu:20.04",
+    "image": "curlimages/curl:7.71.1",
     "cpu": 512,
     "memory": 1024,
-    "essential": true
+    "essential": true,
+    "command": [
+        "http://www.google.com/"
+    ]
   }
 ]
