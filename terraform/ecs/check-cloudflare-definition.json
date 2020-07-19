@@ -1,0 +1,10 @@
+[
+  {
+    "name": "check-cloudflare",
+    "image": "pickledish/checker:v0.0.1",
+    "cpu": 256,
+    "memory": 512,
+    "essential": true,
+    "command": ["cloudflare"]
+  }
+]
