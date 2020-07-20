@@ -16,10 +16,10 @@
   </h3>
   <div class="w-full flex justify-center">
     <div class="flex flex-col justify-between items-stretch w-full md:w-10/12">
-      <Service name="Docker Hub"/>
-      <Service name="Cloudflare"/>
-      <Service name="Amazon S3"/>
-      <Service name="GitHub"/>
+      <Service name="Docker Hub" command="docker pull"/>
+      <Service name="Cloudflare" command=""/>
+      <Service name="Amazon S3" command="curl https://noaa-gfs-bdp-pds.s3.amazonaws.com/index.html"/>
+      <Service name="GitHub" command="git clone https://github.com/rust-lang/rust.git"/>
     </div>
   </div>
 </main>

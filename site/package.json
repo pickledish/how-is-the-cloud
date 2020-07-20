@@ -21,6 +21,7 @@
     "tailwindcss": "^1.4.6"
   },
   "dependencies": {
+    "dayjs": "^1.8.29",
     "sirv-cli": "^0.4.4"
   }
 }

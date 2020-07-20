@@ -14,7 +14,8 @@ SERVICES = [
 
 TESTS = {
     "github": "git clone https://github.com/github/platform-samples.git",
-    "cloudflare": "curl --fail www.google.com"
+    "cloudflare": "curl --fail www.google.com",
+    "amazon_s3": "curl --fail https://noaa-gfs-bdp-pds.s3.amazonaws.com/index.html",
 }
 
 def get_arguments():
