@@ -13,7 +13,7 @@ SERVICES = [
 ]
 
 TESTS = {
-    "github": "git clone https://github.com/github/platform-samples.git",
+    "github": "git clone https://github.com/airbnb/javascript.git",
     "cloudflare": "curl --fail www.google.com",
     "amazon_s3": "curl --fail https://noaa-gfs-bdp-pds.s3.amazonaws.com/index.html",
 }
@@ -41,9 +41,10 @@ def write_row(service, result):
         "Error": result.stdout if result.returncode != 0 else "",
     }
 
-    dynamodb = boto3.resource("dynamodb", region_name=DYNAMODB_REGION)
-    table = dynamodb.Table(DYNAMODB_TABLE)
-    table.put_item(Item=row)
+    print(row)
+    #dynamodb = boto3.resource("dynamodb", region_name=DYNAMODB_REGION)
+    #table = dynamodb.Table(DYNAMODB_TABLE)
+    #table.put_item(Item=row)
 
 def main():
     """

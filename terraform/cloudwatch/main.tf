@@ -22,7 +22,7 @@ resource "aws_cloudwatch_event_target" "check_cloudflare" {
     platform_version = "1.4.0"
 
     task_count          = 1
-    task_definition_arn = "arn:aws:ecs:us-east-2:880716778824:task-definition/check-cloudflare-task:1"
+    task_definition_arn = "arn:aws:ecs:us-east-2:880716778824:task-definition/check-services:1"
 
     network_configuration {
       subnets          = data.aws_subnet_ids.default.ids

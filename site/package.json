@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "dayjs": "^1.8.29",
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "tabler-icons": "^1.10.0"
   }
 }
