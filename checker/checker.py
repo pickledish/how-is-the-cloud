@@ -42,10 +42,9 @@ def write_row(service, result):
         "Error": result.stdout if result.returncode != 0 else "",
     }
 
-    print(row)
-    #dynamodb = boto3.resource("dynamodb", region_name=DYNAMODB_REGION)
-    #table = dynamodb.Table(DYNAMODB_TABLE)
-    #table.put_item(Item=row)
+    dynamodb = boto3.resource("dynamodb", region_name=DYNAMODB_REGION)
+    table = dynamodb.Table(DYNAMODB_TABLE)
+    table.put_item(Item=row)
 
 def main():
     """
