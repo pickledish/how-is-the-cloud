@@ -10,12 +10,13 @@ DYNAMODB_TABLE = "History"
 SERVICES = [
     "github",
     "cloudflare",
+    "amazon_s3",
 ]
 
 TESTS = {
     "github": "git clone https://github.com/airbnb/javascript.git",
     "cloudflare": "curl --fail www.google.com",
-    "amazon_s3": "curl --fail https://noaa-gfs-bdp-pds.s3.amazonaws.com/index.html",
+    "amazon_s3": "aws s3 ls s3://data.mytransit.nyc/subway_time/2017/ --no-sign-request",
 }
 
 def get_arguments():

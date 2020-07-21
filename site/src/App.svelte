@@ -19,7 +19,7 @@
       <Service name="Docker Hub" command="coming soon"/>
       <Service name="Cloudflare" command=""/>
       <Service name="GitHub" command="git clone https://github.com/airbnb/javascript.git"/>
-      <Service name="Amazon S3" command="curl https://noaa-gfs-bdp-pds.s3.amazonaws.com/index.html"/>
+      <Service name="Amazon S3" command="aws s3 ls s3://data.mytransit.nyc/subway_time/2017/"/>
       <Service name="PyPI" command="pip install requests==2.24.0"/>
     </div>
   </div>

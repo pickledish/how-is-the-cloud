@@ -1,18 +1,26 @@
 [
   {
     "name": "check-cloudflare",
-    "image": "pickledish/checker:v0.0.1",
-    "cpu": 256,
-    "memory": 512,
+    "image": "pickledish/checker:v0.0.2",
+    "cpu": 128,
+    "memory": 256,
     "essential": true,
     "command": ["cloudflare"]
   },
   {
     "name": "check-github",
-    "image": "pickledish/checker:v0.0.1",
+    "image": "pickledish/checker:v0.0.2",
+    "cpu": 128,
+    "memory": 256,
+    "essential": true,
+    "command": ["github"]
+  },
+{
+    "name": "check-s3",
+    "image": "pickledish/checker:v0.0.2",
     "cpu": 256,
     "memory": 512,
     "essential": true,
-    "command": ["github"]
+    "command": ["amazon_s3"]
   }
 ]

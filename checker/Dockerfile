@@ -3,7 +3,7 @@
 FROM python:3.8-alpine
 
 # We also need curl and git, to test endpoints
-RUN apk add --no-cache curl git
+RUN apk add --no-cache curl git aws-cli
 
 WORKDIR /code
 
