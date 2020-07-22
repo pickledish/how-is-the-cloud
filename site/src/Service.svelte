@@ -6,8 +6,6 @@
 
 	export let name;
 	export let command;
-	export let darker;
-	export let top = false;
 
 	let safeName = name.toLowerCase().replaceAll(' ', '_')
 	let promise = getService(safeName);

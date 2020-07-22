@@ -1,10 +1,9 @@
 function getClient() {
   return new AWS.DynamoDB.DocumentClient({
-    // super secret access keys to the whole AWS account, no one steal these!
-    // ...jokes, these creds have read permissions to the history table and nothing else
+    // replaced with actual keys at build time via the rollup-replace
     region: 'us-east-2',
-    accessKeyId: 'AKIA42DWPRVEKEP4BKED',
-    secretAccessKey: '7DvWsCus/9Zlh4tMgQDx/EGbtwv2Y7z3OQgcxKtZ',
+    accessKeyId: '__dynamoAccessKey__',
+    secretAccessKey: '__dynamoSecretKey__',
   });
 }
 

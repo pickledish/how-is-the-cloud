@@ -1,6 +1,7 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import replace from '@rollup/plugin-replace';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
@@ -27,6 +28,16 @@ export default {
       },
     }),
 
+    replace({
+      "__buildEnv__": 'production',
+      "__buildDate__": () => new Date(),
+      "__buildVersion__": "foo",
+      // super secret access keys to the whole AWS account, no one steal these!
+      // ...jokes, these creds have read permissions to the history table and nothing else
+      "__dynamoAccessKey__": "AKIA42DWPRVEKEP4BKED",
+      "__dynamoSecretKey__": "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"
+    }),
+
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
     // some cases you'll need additional configuration -
@@ -36,6 +47,7 @@ export default {
       browser: true,
       dedupe: ['svelte'],
     }),
+
     commonjs(),
 
     // In dev mode, call `npm run start` once

@@ -1,13 +1,11 @@
 <script>
   import Tailwindcss from "./Tailwindcss.svelte";
   import Service from './Service.svelte'
-
-  export let name;
 </script>
 
 <Tailwindcss />
 
-<main class="w-full px-2 md:px-32">
+<main class="w-full h-full px-2 md:px-32">
   <h1 class="text-4xl mb-4">
     How is the cloud doing?
   </h1>
@@ -23,4 +21,5 @@
       <Service name="PyPI" command="pip install requests==2.24.0"/>
     </div>
   </div>
+  Hi I'm daisy
 </main>
