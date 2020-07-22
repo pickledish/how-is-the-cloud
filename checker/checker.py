@@ -7,23 +7,18 @@ import boto3
 DYNAMODB_REGION = "us-east-2"
 DYNAMODB_TABLE = "History"
 
-SERVICES = [
-    "github",
-    "cloudflare",
-    "amazon_s3",
-]
-
 TESTS = {
     "github": "git clone https://github.com/airbnb/javascript.git",
     "cloudflare": "curl --fail www.google.com",
     "amazon_s3": "aws s3 ls s3://data.mytransit.nyc/subway_time/2017/ --no-sign-request",
+    "pypi": "pip install requests==2.24.0",
 }
 
 def get_arguments():
     """
     """
     parser = argparse.ArgumentParser(description="Check service availability")
-    parser.add_argument("service", choices=SERVICES, help="Service to check")
+    parser.add_argument("service", choices=TESTS.keys(), help="Service to check")
     return parser.parse_args()
 
 def run_test(service):
@@ -42,6 +37,7 @@ def write_row(service, result):
         "Error": result.stdout if result.returncode != 0 else "",
     }
 
+    print(row)
     dynamodb = boto3.resource("dynamodb", region_name=DYNAMODB_REGION)
     table = dynamodb.Table(DYNAMODB_TABLE)
     table.put_item(Item=row)
