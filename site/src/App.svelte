@@ -30,6 +30,6 @@
     Static bundle version __buildVersion__ --
     This version built on {dayjs.unix(__buildTime__).format('YYYY-MM-DD ')}
     at {dayjs.unix(__buildTime__).format('h:mm A')} --
-    Find the source on <a>Github</a>
+    Find the source on <a href="https://github.com/pickledish/how-is-the-cloud">Github</a>
   </div>
 </main>

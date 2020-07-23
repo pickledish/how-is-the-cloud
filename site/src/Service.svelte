@@ -7,7 +7,7 @@
 	export let name;
 	export let command;
 
-	let safeName = name.toLowerCase().replaceAll(' ', '_')
+	let safeName = name.toLowerCase().replace(' ', '_')
 	let promise = getService(safeName);
 
 </script>
@@ -16,7 +16,7 @@
 	<div class="w-8 mr-6">
 		<img class="h-8 w-8" src="./{safeName}.png"/>
 	</div>
-	<div class="w-30">
+	<div class="w-32">
 		<div class="font-bold">{name}</div>
 	</div>
 	<div class="flex-grow font-mono text-sm">
