@@ -17,6 +17,17 @@ export default {
     file: 'public/build/bundle.js',
   },
   plugins: [
+
+    replace({
+      "__buildEnv__": 'production',
+      "__buildTime__": () => Math.round(new Date().getTime() / 1000),
+      "__buildVersion__": process.env.GITHASH,
+      // super secret access keys to the whole AWS account, no one steal these!
+      // ...jokes, these creds have read permissions to the history table and nothing else
+      "__dynamoAccessKey__": "AKIA42DWPRVEKEP4BKED",
+      "__dynamoSecretKey__": "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"
+    }),
+
     svelte({
       preprocess: sveltePreprocess({ postcss: true }),
       // enable run-time checks when not in production
@@ -26,16 +37,6 @@ export default {
       css: (css) => {
         css.write('public/build/bundle.css');
       },
-    }),
-
-    replace({
-      "__buildEnv__": 'production',
-      "__buildDate__": () => new Date(),
-      "__buildVersion__": "foo",
-      // super secret access keys to the whole AWS account, no one steal these!
-      // ...jokes, these creds have read permissions to the history table and nothing else
-      "__dynamoAccessKey__": "AKIA42DWPRVEKEP4BKED",
-      "__dynamoSecretKey__": "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"
     }),
 
     // If you have external dependencies installed from
